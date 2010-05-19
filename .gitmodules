@@ -1,0 +1,6 @@
+[submodule "vendor/rsense"]
+	path = vendor/rsense
+	url = http://github.com/m2ym/rsense.git
+[submodule "vendor/textmate"]
+	path = vendor/textmate
+	url = http://github.com/defunkt/textmate.el.git
