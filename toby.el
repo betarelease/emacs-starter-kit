@@ -7,7 +7,7 @@
 ;  ns-use-mac-modifier-symbols  nil  ; display standard Emacs
   )
 
-(load-file "~/.emacs.d/tobys-colors.el")
+(load-file (concat dotfiles-dir "/tobys-colors.el"))
 (my-color-theme)
 
 (setenv "PATH" (concat "/usr/local/git/bin/" ":" (getenv "PATH")))
@@ -29,3 +29,21 @@
   (interactive)
   (set-frame-position (selected-frame) 0 0)
   (set-frame-size (selected-frame) 1000 1000))
+
+(setq rsense-home (concat dotfiles-dir "/vendor/rsense"))
+(add-to-list 'load-path (concat rsense-home "/etc"))
+(require 'rsense)
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete-1.2"))
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c .") 'ac-complete-rsense)))
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (add-to-list 'ac-sources 'ac-source-rsense-method)
+            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+
