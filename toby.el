@@ -1,3 +1,6 @@
+(require 'tobys-key-bindings)
+(require 'tobys-ruby-hooks)
+
 (setq mouse-wheel-scroll-amount '(1))
 (setq mouse-wheel-progressive-speed nil)
 
@@ -30,20 +33,29 @@
   (set-frame-position (selected-frame) 0 0)
   (set-frame-size (selected-frame) 1000 1000))
 
-(setq rsense-home (concat dotfiles-dir "/vendor/rsense"))
-(add-to-list 'load-path (concat rsense-home "/etc"))
-(require 'rsense)
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete-1.2"))
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-
-(add-hook 'ruby-mode-hook
+(add-hook 'align-load-hook
           (lambda ()
-            (local-set-key (kbd "C-c .") 'ac-complete-rsense)))
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (add-to-list 'ac-sources 'ac-source-rsense-method)
-            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+            (add-to-list 'align-rules-list
+                         '(text-column-whitespace
+                           (regexp  . "\\(^\\|\\S-\\)\\([ \t]+\\)")
+                           (group   . 2)
+                           (modes   . align-text-modes)
+                           (repeat  . t)))))
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/delim-kill"))
+(require 'delim-kill)
+
+(defun unicode-insert (char)
+  "Read a unicode code point and insert said character.
+    Input uses `read-quoted-char-radix'.  If you want to copy
+    the values from the Unicode charts, you should set it to 16."
+  (interactive (list (read-quoted-char "Char: ")))
+  (ucs-insert char))
+
+(require 'real-auto-save)
+(add-hook 'text-mode-hook 'turn-on-real-auto-save)
+(add-hook 'ruby-mode-hook 'turn-on-real-auto-save)
+
+(setq real-auto-save-interval 5) ;; in seconds
+
 
