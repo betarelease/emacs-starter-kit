@@ -16,15 +16,16 @@
 (setenv "PATH" (concat "/usr/local/git/bin/" ":" (getenv "PATH")))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+(progn (cd "~/.emacs.d/vendor")
+       (normal-top-level-add-subdirs-to-load-path))
 (require 'column-marker)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet-0.6.1c"))
 (require 'yasnippet)
+(setq yas/trigger-key (kbd "C-c y"))
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/vendor/yasnippet-0.6.1c/snippets"))
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/textmate"))
 (require 'textmate)
 (textmate-mode)
 
@@ -42,7 +43,6 @@
                            (modes   . align-text-modes)
                            (repeat  . t)))))
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/delim-kill"))
 (require 'delim-kill)
 
 (defun unicode-insert (char)
