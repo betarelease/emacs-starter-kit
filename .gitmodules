@@ -7,3 +7,9 @@
 [submodule "vendor/delim-kill"]
 	path = vendor/delim-kill
 	url = http://github.com/thomas11/delim-kill.git
+[submodule "vendor/rspec-mode"]
+	path = vendor/rspec-mode
+	url = http://github.com/pezra/rspec-mode.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = http://github.com/senny/rvm.el.git
