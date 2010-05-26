@@ -1,3 +1,9 @@
+(setenv "PATH" (concat "/usr/local/mongodb/bin" ":" "/usr/local/git/bin/" ":" (getenv "PATH")))
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+(progn (cd "~/.emacs.d/vendor")
+       (normal-top-level-add-subdirs-to-load-path))
+
 (require 'tobys-key-bindings)
 (require 'tobys-ruby-hooks)
 
@@ -11,12 +17,6 @@
 
 (load-file (concat dotfiles-dir "/tobys-colors.el"))
 (my-color-theme)
-
-(setenv "PATH" (concat "/usr/local/git/bin/" ":" (getenv "PATH")))
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
-(progn (cd "~/.emacs.d/vendor")
-       (normal-top-level-add-subdirs-to-load-path))
 
 (require 'column-marker)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 80)))
