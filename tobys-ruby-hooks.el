@@ -25,6 +25,7 @@
 (autoload 'mode-compile-kill "mode-compile"
  "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key (kbd "C-c k") 'mode-compile-kill)
+(setq mode-compile-save-all-p t)
 
 (provide 'tobys-ruby-hooks)
 
