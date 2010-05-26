@@ -11,9 +11,9 @@
             (set (make-local-variable 'indent-tabs-mode) 'nil)
             (local-set-key (kbd "M-RET") 'textmate-next-line)
             (set (make-local-variable 'tab-width) 2)
-            (define-key ruby-mode-map "C-m" 'newline-and-indent)
-            (require 'ruby-electric)
-            (ruby-electric-mode t)
+;            (define-key ruby-mode-map "C-m" 'newline-and-indent)
+;            (require 'ruby-electric)
+;            (ruby-electric-mode t)
             ))
 
 ; Install mode-compile to give friendlier compiling support

@@ -7,7 +7,6 @@
 (setq
   ns-command-modifier   'meta       ; Apple/Command key is Meta
   ns-alternate-modifier 'super      ; Option is the Mac Option key
-;  ns-use-mac-modifier-symbols  nil  ; display standard Emacs
   )
 
 (load-file (concat dotfiles-dir "/tobys-colors.el"))
@@ -18,6 +17,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (progn (cd "~/.emacs.d/vendor")
        (normal-top-level-add-subdirs-to-load-path))
+
 (require 'column-marker)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
