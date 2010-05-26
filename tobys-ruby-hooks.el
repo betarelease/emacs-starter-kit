@@ -1,5 +1,3 @@
-(require 'rsense)
-
 (add-hook 'ruby-mode-hook
           (lambda()
             (add-hook 'local-write-file-hooks
@@ -12,8 +10,12 @@
             (local-set-key (kbd "M-RET") 'textmate-next-line)
             (set (make-local-variable 'tab-width) 2)
 ;            (define-key ruby-mode-map "C-m" 'newline-and-indent)
-;            (require 'ruby-electric)
-;            (ruby-electric-mode t)
+            (require 'rsense)
+            (require 'rspec-mode)
+            (require 'rvm)
+            (rvm-use-default)
+            (require 'ruby-electric)
+            (ruby-electric-mode t)
             ))
 
 ; Install mode-compile to give friendlier compiling support
