@@ -12,6 +12,7 @@
 ;            (define-key ruby-mode-map "C-m" 'newline-and-indent)
             (require 'rsense)
             (require 'rspec-mode)
+            (local-set-key (kbd "M-r") 'rspec-verify)
             (require 'rvm)
             (rvm-use-default)
             (require 'ruby-electric)

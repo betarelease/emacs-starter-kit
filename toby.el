@@ -28,6 +28,8 @@
 
 (require 'textmate)
 (textmate-mode)
+(require 'peepopen)
+
 
 (defun maximize-frame ()
   (interactive)
