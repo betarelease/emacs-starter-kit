@@ -7,14 +7,6 @@
 (require 'tobys-key-bindings)
 (require 'tobys-ruby-hooks)
 
-(setq mouse-wheel-scroll-amount '(1))
-(setq mouse-wheel-progressive-speed nil)
-
-(setq
-  ns-command-modifier   'meta       ; Apple/Command key is Meta
-  ns-alternate-modifier 'super      ; Option is the Mac Option key
-  )
-
 (load-file (concat dotfiles-dir "/tobys-colors.el"))
 (my-color-theme)
 
@@ -29,7 +21,6 @@
 (require 'textmate)
 (textmate-mode)
 (require 'peepopen)
-
 
 (defun maximize-frame ()
   (interactive)
@@ -60,4 +51,4 @@
 
 (setq real-auto-save-interval 5) ;; in seconds
 
-
+(require 'move_selection)
