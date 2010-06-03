@@ -4,6 +4,10 @@
 (progn (cd "~/.emacs.d/vendor")
        (normal-top-level-add-subdirs-to-load-path))
 
+(require 'textmate)
+(textmate-mode)
+(require 'peepopen)
+
 (require 'tobys-key-bindings)
 (require 'tobys-ruby-hooks)
 
@@ -15,12 +19,10 @@
 
 (require 'yasnippet)
 (setq yas/trigger-key (kbd "C-c y"))
+
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/vendor/yasnippet-0.6.1c/snippets"))
-
-(require 'textmate)
-(textmate-mode)
-(require 'peepopen)
+(yas/load-directory (concat dotfiles-dir "/my-snippets"))
 
 (defun maximize-frame ()
   (interactive)
