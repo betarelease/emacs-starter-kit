@@ -1,4 +1,5 @@
 (setenv "PATH" (concat "/usr/local/mongodb/bin" ":" "/usr/local/git/bin/" ":" (getenv "PATH")))
+(setq exec-path (append exec-path '("/usr/local/git/bin")))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (progn (cd "~/.emacs.d/vendor")
@@ -8,11 +9,11 @@
 (textmate-mode)
 (require 'peepopen)
 
-(require 'tobys-key-bindings)
-(require 'tobys-ruby-hooks)
+(require 'key-bindings)
+(require 'ruby-hooks)
 
-(load-file (concat dotfiles-dir "/tobys-colors.el"))
-(my-color-theme)
+(load-file (concat user-specific-dir "/colors.el"))
+(pastels-color-theme)
 
 (require 'column-marker)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 80)))
@@ -53,4 +54,4 @@
 
 (setq real-auto-save-interval 5) ;; in seconds
 
-(require 'move_selection)
+(require 'move-selection)

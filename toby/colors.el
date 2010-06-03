@@ -1,9 +1,9 @@
 (eval-when-compile    (require 'color-theme))
-(defun my-color-theme ()
+(defun pastels-color-theme ()
   "Color theme by Toby Tripp, created 2008-09-25."
   (interactive)
   (color-theme-install
-   '(my-color-theme
+   '(pastels-color-theme
      ((background-color . "#211E1E")
       (background-mode . dark)
       (background-toolbar-color . "#cf3ccf3ccf3c")
@@ -615,7 +615,7 @@
      (mouse ((t (:background "Grey"))))
      (mpg123-face-cur ((t (:background "#004080" :foreground "yellow"))))
      (mpg123-face-slider ((t (:background "yellow" :foreground "black"))))
-     (my-summary-highlight-face ((t (:foreground "White"))))
+     (MY-summary-highlight-face ((t (:foreground "White"))))
      (my-tab-face ((t (:background "SlateBlue1"))))
      (my-url-face ((t (:foreground "PaleTurquoise"))))
      (next-error ((t (:background "DarkSlateBlue"))))
@@ -885,4 +885,4 @@
      (xxml-unbreakable-space-face ((t (:foreground "grey" :underline t))))
      (yellow ((t (:foreground "yellow"))))
      (zmacs-region ((t (:background "DarkSlateBlue")))))))
-(add-to-list 'color-themes '(my-color-theme  "Pastels" "Toby Tripp"))
+(add-to-list 'color-themes '(pastels-color-theme  "Pastels" "Toby Tripp"))

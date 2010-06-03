@@ -19,4 +19,4 @@
 
 (define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
 
-(provide 'tobys-key-bindings)
+(provide 'key-bindings)

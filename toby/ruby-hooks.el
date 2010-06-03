@@ -32,5 +32,5 @@
 (global-set-key (kbd "C-c k") 'mode-compile-kill)
 (setq mode-compile-save-all-p t)
 
-(provide 'tobys-ruby-hooks)
+(provide 'ruby-hooks)
 
