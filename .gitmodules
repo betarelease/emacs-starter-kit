@@ -13,3 +13,6 @@
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = http://github.com/senny/rvm.el.git
+[submodule "vendor/twittering-mode"]
+	path = vendor/twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git

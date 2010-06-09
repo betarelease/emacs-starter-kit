@@ -7,7 +7,7 @@
   ns-pop-up-frames      nil
   )
 
-(global-set-key (kbd "M-l") 'goto-line)
+(global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-s") 'save-buffer)
 

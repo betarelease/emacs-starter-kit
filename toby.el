@@ -4,7 +4,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (progn (cd "~/.emacs.d/vendor")
        (normal-top-level-add-subdirs-to-load-path))
-
 (require 'textmate)
 (textmate-mode)
 (require 'peepopen)
@@ -55,3 +54,13 @@
 (setq real-auto-save-interval 5) ;; in seconds
 
 (require 'move-selection)
+
+(load "~/.emacs.d/vendor/twittering-mode/twittering-mode.el")
+(require 'twittering-mode)
+(setq twittering-username "tobytripp")
+(setq twittering-icon-mode t)
+
+(require 'ack-emacs)
+(require 'ack-in-project)
+
+(server-start)
