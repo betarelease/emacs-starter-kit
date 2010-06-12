@@ -17,6 +17,10 @@
 (require 'column-marker)
 (add-hook 'ruby-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+
 (require 'yasnippet)
 (setq yas/trigger-key (kbd "C-c y"))
 
@@ -64,3 +68,10 @@
 (require 'ack-in-project)
 
 (server-start)
+
+(set-frame-parameter (selected-frame) 'alpha '(90 70))
+
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(require 'ess-site)

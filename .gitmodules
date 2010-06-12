@@ -16,3 +16,6 @@
 [submodule "vendor/twittering-mode"]
 	path = vendor/twittering-mode
 	url = git://github.com/hayamiz/twittering-mode.git
+[submodule "vendor/cucumber"]
+	path = vendor/cucumber
+	url = http://github.com/michaelklishin/cucumber.el.git
