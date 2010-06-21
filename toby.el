@@ -10,6 +10,7 @@
 
 (require 'key-bindings)
 (require 'ruby-hooks)
+(require 'haskell-hooks)
 
 (load-file (concat user-specific-dir "/colors.el"))
 (pastels-color-theme)
@@ -22,11 +23,12 @@
 
 
 (require 'yasnippet)
-(setq yas/trigger-key (kbd "C-c y"))
+(setq yas/trigger-key (kbd "C-c ."))
 
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/vendor/yasnippet-0.6.1c/snippets"))
 (yas/load-directory (concat dotfiles-dir "/my-snippets"))
+(yas/load-directory (concat dotfiles-dir "/vendor/cucumber/snippets"))
 
 (defun maximize-frame ()
   (interactive)
@@ -67,7 +69,9 @@
 (require 'ack-emacs)
 (require 'ack-in-project)
 
+(setq server-name "toby.emacs")
 (server-start)
+(add-hook 'after-init-hook 'server-start)
 
 (set-frame-parameter (selected-frame) 'alpha '(90 70))
 
@@ -75,3 +79,6 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (require 'ess-site)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
