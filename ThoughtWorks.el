@@ -79,3 +79,8 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(add-to-list 'load-path "writegood-mode")
+(require 'writegood-mode)
+(global-set-key "\C-cg" 'writegood-mode)
+
